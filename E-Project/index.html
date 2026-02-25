@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toy Shop</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">🧸 TOYO Toys</div>
+    <nav>
+        <a href="#home" onclick="showMain()">Home</a>
+        <a href="#about" onclick="showMain()">About</a>
+        <a href="#contactUs" onclick="showMain()">Contact Us</a>
+
+        <!-- Brands Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn">Brands ▼</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="filterByBrand('all')">All</a>
+                <a href="#" onclick="filterByBrand('Mattel')">Mattel</a>
+                <a href="#" onclick="filterByBrand('Lego')">Lego</a>
+                <a href="#" onclick="filterByBrand('Hasbro')">Hasbro</a>
+                <a href="#" onclick="filterByBrand('Bandai')">Bandai</a>
+            </div>
+        </div>
+
+        <!-- Age Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn">Age Group ▼</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="filterByAge('all')">All</a>
+                <a href="#" onclick="filterByAge('3-5')">3-5 Years</a>
+                <a href="#" onclick="filterByAge('6-8')">6-8 Years</a>
+                <a href="#" onclick="filterByAge('9-12')">9-12 Years</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main id="mainContent">
+
+<section id="home" class="section">
+<h1>Welcome to TOYO Toys!</h1>
+<br>
+    <p>Discover fun and educational toys for every age group. Browse by brand or age to find the perfect toy for your little one!</p>
+
+  <div class="scroll-wrapper">
+    <button class="scroll-btn left" onclick="scrollLeft()">&#8592;</button>
+    <div id="toyContainer">
+      
+      <!-- 1 -->
+<div class="toy toy-card" data-brand="Lego" data-age="3-5" data-price="29.99"
+data-details="Fun Lego set for beginners."
+data-doc="documents/lego1.docx">
+<img src="images/lego1.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Lego Batman Mech Armor</h3>
+<p>Price: $110.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 2 -->
+<div class="toy toy-card" data-brand="Mattel" data-age="6-8" data-price="19.99"
+data-details="Exciting Mattel car set."
+data-doc="documents/mattel2.docx">
+<img src="images/mattel2.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Hot Wheels Barbie RC SUV</h3>
+<p>Price: $39.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 3 -->
+<div class="toy toy-card" data-brand="Hasbro" data-age="9-12" data-price="39.99"
+data-details="Fun action figure from Hasbro."
+data-doc="documents/hasbro3.docx">
+<img src="images/hasbro3.jpg" onclick="showDetailsFromHTML(this)">
+<h3>My Little Pony Sunny Starscoat Playset</h3>
+<p>Price: $25.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 4 -->
+<div class="toy toy-card" data-brand="Bandai" data-age="3-5" data-price="24.99"
+data-details="Bandai robot toy."
+data-doc="documents/bandai4.docx">
+<img src="images/bandai4.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Bandai HG Gundam Zagan</h3>
+<p>Price: $34.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 5 -->
+<div class="toy toy-card" data-brand="Lego" data-age="6-8" data-price="34.99"
+data-details="Intermediate Lego building kit."
+data-doc="documents/lego5.docx">
+<img src="images/lego5.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Lego Ninjago Zane’s Battle Suit</h3>
+<p>Price: $59.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 6 -->
+<div class="toy toy-card" data-brand="Mattel" data-age="3-5" data-price="22.99"
+data-details="Mattel puzzle set."
+data-doc="documents/mattel6.docx">
+<img src="images/mattel6.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Hot Wheels Monster Trucks Set</h3>
+<p>Price: $22.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 7 -->
+<div class="toy toy-card" data-brand="Hasbro" data-age="6-8" data-price="27.99"
+data-details="Hasbro board game."
+data-doc="documents/hasbro7.docx">
+<img src="images/hasbro7.jpg" onclick="showDetailsFromHTML(this)">
+<h3>My Little Pony Princess Pipp Petals Doll</h3>
+<p>Price: $19.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 8 -->
+<div class="toy toy-card" data-brand="Bandai" data-age="9-12" data-price="44.99"
+data-details="Bandai collectible figurine."
+data-doc="documents/bandai8.docx">
+<img src="images/bandai8.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Bandai RX-78-2 Gundam</h3>
+<p>Price: $10.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 9 -->
+<div class="toy toy-card" data-brand="Lego" data-age="9-12" data-price="49.99"
+data-details="Advanced Lego creator set."
+data-doc="documents/lego9.docx">
+<img src="images/lego9.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Lego Minecraft Desert Patrol</h3>
+<p>Price: $110.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 10 -->
+<div class="toy toy-card" data-brand="Mattel" data-age="9-12" data-price="32.99"
+data-details="Mattel building blocks for older kids."
+data-doc="documents/mattel10.docx">
+<img src="images/mattel10.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Barbie Fashion Pack Set</h3>
+<p>Price: $39.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 11 -->
+<div class="toy toy-card" data-brand="Hasbro" data-age="3-5" data-price="21.99"
+data-details="Fun Hasbro learning toy."
+data-doc="documents/hasbro11.docx">
+<img src="images/hasbro11.jpg" onclick="showDetailsFromHTML(this)">
+<h3>My Little Pony Zephyr Heights Playset</h3>
+<p>Price: $14.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 12 -->
+<div class="toy toy-card" data-brand="Bandai" data-age="6-8" data-price="37.99"
+data-details="Bandai interactive toy set."
+data-doc="documents/bandai12.docx">
+<img src="images/bandai12.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Bandai RG God Gundam</h3>
+<p>Price: $49.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 13 -->
+<div class="toy toy-card" data-brand="Lego" data-age="3-5" data-price="26.99"
+data-details="Mini Lego kits."
+data-doc="documents/lego13.docx">
+<img src="images/lego13.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Lego Star Wars X-Wing Mech</h3>
+<p>Price: $119.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 14 -->
+<div class="toy toy-card" data-brand="Mattel" data-age="6-8" data-price="33.99"
+data-details="Mattel doll set."
+data-doc="documents/mattel14.docx">
+<img src="images/mattel14.jpg" onclick="showDetailsFromHTML(this)">
+<h3>UNO Card Game</h3>
+<p>Price: $14.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 15 -->
+<div class="toy toy-card" data-brand="Hasbro" data-age="9-12" data-price="42.99"
+data-details="Hasbro electronic toy."
+data-doc="documents/hasbro15.docx">
+<img src="images/hasbro15.jpg" onclick="showDetailsFromHTML(this)">
+<h3>My Little Pony Rainbow Dash PVC Figure</h3>
+<p>Price: $25.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 16 -->
+<div class="toy toy-card" data-brand="Bandai" data-age="3-5" data-price="23.99"
+data-details="Bandai small toy figure."
+data-doc="documents/bandai16.docx">
+<img src="images/bandai16.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Bandai Pokemon Eevee Kit</h3>
+<p>Price: $11.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 17 -->
+<div class="toy toy-card" data-brand="Lego" data-age="6-8" data-price="38.99"
+data-details="Lego city set."
+data-doc="documents/lego17.docx">
+<img src="images/lego17.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Lego Sunflowers Set</h3>
+<p>Price: $99.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 18 -->
+<div class="toy toy-card" data-brand="Mattel" data-age="9-12" data-price="45.99"
+data-details="Mattel action figure set."
+data-doc="documents/mattel18.docx">
+<img src="images/mattel18.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Hot Wheels Track Builder Set</h3>
+<p>Price: $28.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 19 -->
+<div class="toy toy-card" data-brand="Hasbro" data-age="3-5" data-price="19.99"
+data-details="Hasbro plush toy."
+data-doc="documents/hasbro19.docx">
+<img src="images/hasbro19.jpg" onclick="showDetailsFromHTML(this)">
+<h3>My Little Pony Ponymania 6-Pack</h3>
+<p>Price: $180.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 20 -->
+<div class="toy toy-card" data-brand="Bandai" data-age="6-8" data-price="35.99"
+data-details="Bandai robot toy."
+data-doc="documents/bandai20.docx">
+<img src="images/bandai20.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Bandai Star Wars X-Wing Starfighter Model</h3>
+<p>Price: $9.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 21 -->
+<div class="toy toy-card" data-brand="Lego" data-age="9-12" data-price="52.99"
+data-details="Lego technic car set."
+data-doc="documents/lego21.docx">
+<img src="images/lego21.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Lego Disney Cinderella’s Mini Garden</h3>
+<p>Price: $29.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 22 -->
+<div class="toy toy-card" data-brand="Mattel" data-age="3-5" data-price="24.99"
+data-details="Mattel mini toy cars."
+data-doc="documents/mattel22.docx">
+<img src="images/mattel22.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Hot Wheels HW Ultimate Garage</h3>
+<p>Price: $139.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 23 -->
+<div class="toy toy-card" data-brand="Hasbro" data-age="6-8" data-price="29.99"
+data-details="Hasbro puzzle set."
+data-doc="documents/hasbro23.docx">
+<img src="images/hasbro23.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Monopoly (Standard Hasbro Edition)</h3>
+<p>Price: $25.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 24 -->
+<div class="toy toy-card" data-brand="Bandai" data-age="9-12" data-price="49.99"
+data-details="Bandai collectible kit."
+data-doc="documents/bandai24.docx">
+<img src="images/bandai24.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Bandai HG Gundam Lfrith UR</h3>
+<p>Price: $29.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 25 -->
+<div class="toy toy-card" data-brand="Lego" data-age="3-5" data-price="27.99"
+data-details="Lego starter set."
+data-doc="documents/lego25.docx">
+<img src="images/lego25.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Lego Harry Potter Draco Forbidden Forest</h3>
+<p>Price: $2.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 26 -->
+<div class="toy toy-card" data-brand="Mattel" data-age="6-8" data-price="31.99"
+data-details="Mattel creative art toy."
+data-doc="documents/mattel26.docx">
+<img src="images/mattel26.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Barbie Deluxe Playset</h3>
+<p>Price: $135.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 27 -->
+<div class="toy toy-card" data-brand="Hasbro" data-age="9-12" data-price="43.99"
+data-details="Hasbro strategy game."
+data-doc="documents/hasbro27.docx">
+<img src="images/hasbro27.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Transformers Action Figure</h3>
+<p>Price: $39.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 28 -->
+<div class="toy toy-card" data-brand="Bandai" data-age="6-8" data-price="36.99"
+data-details="Bandai action robot."
+data-doc="documents/bandai28.docx">
+<img src="images/bandai28.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Bandai Anime Heroes Uzumaki Naruto Toy Action Figure</h3>
+<p>Price: $36.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 29 -->
+<div class="toy toy-card" data-brand="Lego" data-age="9-12" data-price="55.99"
+data-details="Lego advanced building set."
+data-doc="documents/lego29.docx">
+<img src="images/lego29.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Lego Botanicals Plum Blossom</h3>
+<p>Price: $197.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+<!-- 30 -->
+<div class="toy toy-card" data-brand="Mattel" data-age="3-5" data-price="25.99"
+data-details="Mattel fun playset."
+data-doc="documents/mattel30.docx">
+<img src="images/mattel30.jpg" onclick="showDetailsFromHTML(this)">
+<h3>Barbie Signature Styled Doll With 3 outfit</h3>
+<p>Price: $25.99</p>
+<button onclick="showDetailsFromHTML(this)">View Details</button>
+<button onclick="addToCartFromHTML(this)">Add to Cart</button>
+<button onclick="addToCompareFromHTML(this)">Compare</button>
+<button onclick="downloadToyFeatures(this)">Download Features</button>
+</div>
+
+
+    </div>
+
+    </div>
+    <button class="scroll-btn right" onclick="scrollRight()">&#8594;</button>
+  </div>
+</section>
+
+<section id="compareSection" class="section" style="display:none;">
+    <h2>Compare Toys</h2>
+    <table id="compareTable" border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Age</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Compare rows will be added here dynamically -->
+        </tbody>
+    </table>
+    <button onclick="clearCompare()">Clear Compare</button>
+    <br>
+    <br>
+    <p class="tagline">“Play, Learn, and Grow – One Toy at a Time!”</p>
+
+</section>
+    
+<!-- ABOUT SECTION -->
+<section id="about" class="about-section">
+  <div class="container">
+    <h2>About <span>TOYO Toys</span></h2>
+
+    <!-- Company Overview -->
+    <div class="about-block">
+      <h3>🏢 Company Overview</h3>
+      <p>
+        TOYO Toys has been bringing smiles to children for over 10 years. We specialize in 
+        creating safe, high-quality toys that spark imagination and learning. From building 
+        blocks to educational games, our wide variety of products cater to children of all 
+        ages and developmental stages. We are passionate about nurturing creativity, curiosity, 
+        and fun through play.
+      </p>
+    </div>
+
+    <!-- Mission Statement -->
+    <div class="about-block">
+      <h3>🎯 Mission Statement</h3>
+      <ul>
+        <li>Fun + Educational: Every toy is designed to entertain while teaching new skills.</li>
+        <li>Safety First: All products meet strict safety standards.</li>
+        <li>Inspire Creativity: Encouraging imaginative play and problem solving.</li>
+      </ul>
+    </div>
+
+    <!-- Why Choose Us -->
+    <div class="about-block">
+      <h3>⭐ Why Choose Us</h3>
+      <ul>
+        <li>🛡️ Quality: Durable, non-toxic materials designed to withstand hours of play.</li>
+        <li>✅ Safety: Tested and approved to exceed international toy safety standards, giving parents peace of mind.</li>
+        <li>📚 Educational Value: Toys that teach STEM concepts, critical thinking, and social skills in a fun way.</li>
+        <li>🌈 Variety: Wide range of toys suitable for toddlers, preschoolers, and older children.</li>
+        <li>🎁 Joyful Experience: Thoughtfully designed packaging and themes that make every gift special.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contactUs">
+    <h2>Contact Us</h2>
+    <p>If you have questions or feedback, send us a message!</p>
+
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Your message..." rows="6" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+    <br>
+    <br>
+    <div id="contactInfo">
+  <p><strong>Company Address:</strong></p>
+  <p>
+    TOYO Toys Pvt Ltd<br>
+    123 Toy Street,<br>
+    Karachi, Pakistan
+  </p>
+  <br>
+  <p>
+    <strong>Email:</strong> 
+    <a href="mailto:faizan2510a@aptechgdn.net">faizan2510a@aptechgdn.net</a>
+  </p>
+  <p>
+    <strong>Phone:</strong> +92 311-661-6063
+  </p>
+</div>
+    <p id="successMessage" style="display:none;">Thank you, your message has been sent!</p>
+</section>
+</main>
+
+<section id="toyDetails" class="section" style="display:none;">
+    <button onclick="closeDetailsPage()" class="backBtn">← Back</button>
+    <div class="details-container">
+        <img id="detailsImage" src="">
+        <div class="details-info">
+            <h2 id="detailsName"></h2>
+            <p id="detailsBrand"></p>
+            <p id="detailsAge"></p>
+            <p id="detailsPrice"></p>
+            <p id="detailsDesc"></p>
+            <button onclick="addToCartFromDetails()">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div>
+      <h4>About Us</h4>
+      <ul>
+        <li>Our Story</li>
+        <li>Privacy Policy</li>
+        <li>Terms & Conditions</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Shop By Brand</h4>
+      <ul>
+        <li>Mattel</li>
+        <li>LEGO</li>
+        <li>Hasbro</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Support</h4>
+      <ul>
+        <li>Contact Us</li>
+        <li>Shipping Info</li>
+        <li>Returns</li>
+      </ul>
+    </div>
+
+    <div class="signup-box">
+      <h4>Subscribe</h4>
+      <p>Get updates on new toys and offers!</p>
+      <div class="signup-form">
+        <input type="email" placeholder="Enter email">
+        <button>Sign Up</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="logo">Toyo Toys</div>
+  </div>
+
+  <div class="copyright">
+    © 2026 Toyo Toys. All Rights Reserved.
+  </div>
+
+</footer>
+
+
+
+<div id="cartModal" class="cart-modal">
+    <img id="cartToyImage">
+    <h3 id="cartToyName"></h3>
+    <p id="cartToyPrice"></p>
+    <button onclick="closeCart()">Close</button>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

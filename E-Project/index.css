@@ -1,0 +1,618 @@
+/* ------------------------------
+   RESET AND BASE STYLES
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #333333;
+}
+
+/* ------------------------------
+   HEADER & NAV
+------------------------------ */
+header {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #0061AF;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+nav a {
+  color:#FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  border-radius: 4px;
+   background-color: #F58220;
+  color: #FFFFFF
+}
+
+/* ------------------------------
+   DROPDOWN
+------------------------------ */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #ffb74d;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff3e0;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  z-index: 3000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #5D4037;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffd54f;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ------------------------------
+   MAIN CONTENT & SECTIONS
+------------------------------ */
+.section {
+  padding: 50px 40px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* --- Contact Us Section --- */
+
+#contactUs {
+    background: linear-gradient(135deg, #fff1f3, #ffd6e0); /* soft pink gradient */
+    padding: 40px 25px;
+    margin: 30px auto;
+    border-radius: 15px;
+    max-width: 800px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Form Styling */
+#contactUs form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contactUs input,
+#contactUs textarea {
+    padding: 12px;
+    border: 2px solid #ffb6b9;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#contactUs input:focus,
+#contactUs textarea:focus {
+    border-color: #f77f00; /* playful accent color on focus */
+}
+
+/* Submit Button */
+#contactUs button {
+    padding: 12px;
+    background-color: #ff9a8b;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+#contactUs button:hover {
+    background-color: #ff6f61; /* darker playful shade on hover */
+}
+
+/* Success message */
+#contactUs .success-message {
+    color: #2a9d8f;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+
+/* =================== Buttons =================== */
+button.download-btn {
+    background-color: #72BF44;
+    color:#FFFFFF;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 3px;
+    transition: background 0.3s;
+}
+
+button.download-btn:hover {
+    background-color: #5EA736;
+}
+
+/* Optional modal overlay */
+#overlay {
+    display: none;
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 900;
+}
+
+#detailsModal {
+    display: none;
+    position: fixed;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+#detailsModal button {
+    margin-top: 10px;
+}
+
+/* ------------------------------
+   SCROLLABLE TOYS SECTION
+------------------------------ */
+.scroll-wrapper {
+  position: relative;
+  padding: 0 60px; /* space for arrows */
+}
+
+#toyContainer {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0; /* remove left/right padding to fix scroll */
+}
+
+#toyContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffb74d;
+  border: none;
+  font-size: 20px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.scroll-btn.left {
+  left: 10px;
+}
+
+.scroll-btn.right {
+  right: 10px;
+}
+
+/* ------------------------------
+   TOY CARDS
+------------------------------ */
+.toy {
+  background-color: #fff3e0;
+  border-radius: 10px;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.toy img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.toy h3 {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.toy p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.toy button {
+  margin-top: 5px;
+  padding: 5px 8px;
+  border: none;
+  background-color: #ffcc00;
+  cursor: pointer;
+}
+
+.toy button:hover {
+  background-color: #ffc107;
+}
+
+/* ------------------------------
+   DETAILS PAGE
+------------------------------ */
+#toyDetails {
+  padding: 40px;
+}
+
+.details-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.details-container img {
+  width: 300px;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.details-info {
+  max-width: 600px;
+}
+
+.details-info button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: #ffb74d;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.details-info button:hover {
+  background: #ff9800;
+  transform: scale(1.05);
+}
+
+/* ------------------------------
+   CART MODAL
+------------------------------ */
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff3e0;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 2000;
+}
+
+.cart-modal img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.cart-modal h3 {
+  margin-bottom: 10px;
+}
+
+.cart-modal p {
+  margin-bottom: 10px;
+}
+
+.cart-modal button {
+  margin-top: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ffcc00;
+}
+
+.cart-modal button:hover {
+  background-color: #ffc107;
+}
+
+/* ------------------------------
+   COMPARE TABLE
+------------------------------ */
+#compareSection {
+  background-color: #fff3e0;
+  padding: 30px 40px;
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+#compareSection h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#compareTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  table-layout: fixed;
+}
+
+#compareTable th,
+#compareTable td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #FFD54F;
+  word-wrap: break-word;
+}
+
+#compareTable th {
+  background-color: #ffb74d;
+  color: #5D4037;
+}
+
+#compareTable td {
+  background-color: #fff8e1;
+}
+
+#compareTable button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffcc00;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#compareTable button:hover {
+  background-color: #ffc107;
+  transform: scale(1.05);
+}
+
+#compareSection button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  background-color: #ffb74d;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#compareSection button:hover {
+  background-color: #ff9800;
+  transform: scale(1.05);
+}
+
+/* GENERAL SECTION STYLING */
+  .about-section {
+    background: #fff8f0;
+    padding: 60px 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #333;
+  }
+
+  .about-section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #ff6f61;
+    margin-bottom: 40px;
+  }
+
+  .about-section h2 span {
+    color: #f9d423;
+  }
+
+  .about-block {
+    background: #fff2e6;
+    border: 2px dashed #ff6f61;
+    border-radius: 15px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+  }
+
+  .about-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  .about-block h3 {
+    font-size: 1.8em;
+    color: #ff8c42;
+    margin-bottom: 15px;
+  }
+
+  .about-block p {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+
+  .about-block ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .about-block ul li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+  }
+
+  .about-block ul li::before {
+    content: "🧸"; /* default toy icon for bullet points */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+  }
+
+  /* Responsive */
+  @media(max-width:768px){
+    .about-block {
+      padding: 20px;
+    }
+  }
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+.footer {
+  background-color: #0061AF;
+  color: white;
+  padding: 50px 60px 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+}
+
+.footer h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.footer ul li:hover {
+  text-decoration: underline;
+}
+
+.signup-box p {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.signup-form {
+  display: flex;
+  gap: 10px;
+}
+
+.signup-form input {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+}
+
+.signup-form button {
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signup-form button:hover {
+  background-color: white;
+  color: #1155b5;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
